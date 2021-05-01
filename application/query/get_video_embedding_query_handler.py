@@ -1,13 +1,16 @@
 from typing import List
 
 from application.query.get_video_embedding_query import GetVideoEmbeddingQuery
-from domain.model.image import ImageEmbedding
+from application.query.model.video_embedding_response import VideoEmbeddingResponse
+from domain.model.image import FrameVectorPair
 from poem.pr_vipe import infer
 
 
-async def handle(query: GetVideoEmbeddingQuery) -> List[ImageEmbedding]:
+async def handle(query: GetVideoEmbeddingQuery) -> VideoEmbeddingResponse:
 
     frames = query.convert_to_poem_format()
 
     vectors = infer.infer(query.width, query.height, frames)
-    return [ImageEmbedding(vector=vector) for vector in vectors]
+    frame_vector_pairs = [FrameVectorPair(order=idx, vector=vector) for idx, vector in enumerate(vectors)]
+
+    return VideoEmbeddingResponse(frameVectorPairs=frame_vector_pairs)

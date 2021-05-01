@@ -1,7 +1,8 @@
 from typing import List
 
 
-class ImageEmbedding:
-    def __init__(self,
+class FrameVectorPair:
+    def __init__(self, order: int,
                  vector: List[float]):
+        self.order = order
         self.vector = vector
