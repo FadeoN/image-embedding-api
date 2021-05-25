@@ -1,7 +1,7 @@
 class Flags:
     input_keypoint_profile_name_2d: str = 'LEGACY_2DCOCO13'
     min_input_keypoint_score_2d: float = -1.0
-    embedding_type: str = 'GAUSSIAN'
+    embedding_type: str = 'POINT'
     embedding_size: int = 16
     num_embedding_components: int = 1
     num_embedding_samples: int = 20

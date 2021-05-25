@@ -203,7 +203,7 @@ def infer(width, height, frames):
       outputs_result = sess.run(outputs)
 
     # TODO: should we use mean embeddings instead
-    output = outputs_result[common.KEY_EMBEDDING_STDDEVS]
+    output = outputs_result[common.KEY_EMBEDDING_MEANS]
     out = output.reshape([output.shape[0], -1]).tolist()
     return out
 
