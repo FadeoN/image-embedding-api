@@ -76,8 +76,6 @@ the input CSV file).
 
 """
 
-import os
-
 import numpy as np
 import pandas as pd
 import tensorflow.compat.v1 as tf

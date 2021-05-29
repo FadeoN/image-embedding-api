@@ -11,7 +11,7 @@ class Flags:
     num_hidden_nodes: int = 1024
     num_bottleneck_nodes: int = 0
     weight_max_norm: float = 0.0
-    checkpoint_path: str = "./poem/pr_vipe/checkpoint/model.ckpt-02013963"
+    checkpoint_path: str = "./poem/pr_vipe/checkpoints/model.ckpt-02013963"
     use_moving_average: bool = True
     master: str = ''
 
